@@ -1,0 +1,16 @@
+11.23.2020 r.
+Nauczyłem się:
+-komendy | grep i jej znaczenia
+-co oznacza "|"  ">" ">>" "2>" "2>>" "A | B" oraz "A<B"
+-szeregu komend ps (z współczynnikami) oraz ich zastosowania (ps, ps -a, ps x oraz ps aux)
+ -co oznaczają znaki zapytania w kolumnie 2 albo 7 (x albo aux)-nie przydzielenie danej powłoki danemu procesowi
+-jak wyświtlić wszystkie procesy bash i procesy należące do użytkownika root
+-sprawdzać jaki PID ma dany proces
+-komendy kill i jej zastosowania 
+-że komenda kill nie zadziała dla dowolnego procesu (np. gdy spróbujemy "kill'nąć" proces użytkownika root będąć zwykłym użytkownikiem)
+-działania i zastosowania killall shell
+-różnicy między Ctrl+C  a Ctrl+D (zakończenie procesu a zamknięcie strumienia wejściowego)
+-znaczenie i zastosowanie Ctrl+Z
+-komend bg,fg oraz jobs
+-ponadto komend tar i wget
+Jakub Styn
