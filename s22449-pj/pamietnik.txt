@@ -1,0 +1,96 @@
+03.11.2020
+Zajęcia1
+Temat: Linux - wstęp do konsoli
+Nauczyłem się:
+-urochamiać terminal
+-wyświetlać zawartość aktualnego katalogu
+-sprawdzać gdzie aktualnie się znajduje 
+-przechodzić do katalogu za pomocą ścieżki względnej
+-wyświetlać zawartość katalogu bez przechodzenia do niego
+-przechodzić do katalogu za pomocą ścieżki bezwzględnej
+-tworzyć i usuwać katalogi
+-tworzyć i usuwać pliki
+_________________________________________________________
+_________________________________________________________
+
+13.11.2020
+Zajęcia2
+Temat: Prawa dostępu
+Nauczyłem się:
+- nadawać i odbierać uprawnienia użytkownikom przy pomocy
+u - user
+g - group
+o - others
+
+r - read
+w - write
+x - exe
+
+u+ - dodaj uprawnienie
+u- - zabierz uprawnienie
+      
+      rwe
+0 - 000 
+1 - 001 
+2 - 010 
+3 - 011 
+4 - 100 
+5 - 101 
+6 - 110 
+7 - 111
+
+- łączyć się przez ssh w Linux do szuflandii - sNumerIndexu@szuflandia.pjwstk.edu.pl
+- dowiedziałem się o możliwości usunięcia sobie uprawnień do plików/folderów i co w tedy robić - przejść do folderu, w którym znajduje się folder z usuniętymi uprawnieniami
+
+- poznałem do czego służą znaki 
+'>' - nadpisanie zawartości we wskazanym pliku
+'>>' - dopisanie na koniec wskazanego pliku
+'f' - wyświetlanie w trubie 'teraz' zmian wprowadzanych przez osoby trzecie
+
+- pisanie i wyświetlanie strony HTML  w przeglądarce
+
+_________________________________________________________
+_________________________________________________________
+
+27.11.2020
+Zajęcia3
+Temat: Procesy i strumienie
+Nauczyłem się:
+-komendy | grep i jej znaczenia
+-co oznacza "|"  ">" ">>" "2>" "2>>" "A | B" oraz "A<B"
+-szeregu komend ps (z współczynnikami) oraz ich zastosowania (ps, ps -a, ps x oraz ps aux)
+ -co oznaczają znaki zapytania w kolumnie 2 albo 7 (x albo aux)-nie przydzielenie danej powłoki danemu procesowi
+-jak wyświtlić wszystkie procesy bash i procesy należące do użytkownika root
+-sprawdzać jaki PID ma dany proces
+-komendy kill i jej zastosowania 
+-że komenda kill nie zadziała dla dowolnego procesu (np. gdy spróbujemy "kill'nąć" proces użytkownika root będąć zwykłym użytkownikiem)
+-działania i zastosowania killall shell
+-różnicy między Ctrl+C  a Ctrl+D (zakończenie procesu a zamknięcie strumienia wejściowego)
+-znaczenie i zastosowanie Ctrl+Z
+-komend bg,fg oraz jobs
+-ponadto komend tar i wget
+
+_________________________________________________________
+_________________________________________________________
+
+Zajęcia4
+Temat: Kolokwium Linux - powtórzenie
+
+Na dzisiejszych zajęciach nauczyłem się: 
+1.Powtórzyłem i utrwalłem większość wiadomości z poprzednich zajęć
+_________________________________________________________
+_________________________________________________________
+
+Zajęcia5
+Temat: Kolokwium 
+
+Na dzisiejszych zajęciach:
+1.Utworzyłem plik o nazwie program.c za pomocą touch.
+2.Przepisując kod w geany zauważyłem, że koloruje on odpowiednio kod.
+3.Ponadto otwierając { i wciskając enter, program sam robi odpowiednie wcięcia w tekście.
+4.Wpisując printf, już po kilku literach program sam podpowiada mi, co chcę wpisać.
+5.Narzędzie diff jako polecenie "diff program.c nowy.c" porównuje dwa pliki.
+
+_________________________________________________________
+_________________________________________________________
+

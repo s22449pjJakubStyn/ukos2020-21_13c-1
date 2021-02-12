@@ -1,0 +1,35 @@
+
+Zadanie 0:
+Po wykonaniu komendy "ls -l" zostało wypisanych  10 katalogów i 1 plik
+
+Po wykonaniu komendy "ls -a | grep D zostały wypisane wszystkie foldery/pliki spełniające warunki "grep"
+
+Po wykonaniu komendy "ls -a | grep D > ListaPlikowZLiterkaD.txt"  Do pliku List... zastały zapisane wszystkie 
+foldery/pliki spełniające warunki "grep"
+
+Zadanie 1:
+ps aux
+ps aux grep | root
+ps -U root
+
+Zadanie 2:
+ps -u ubuntu
+kill 25721
+killall shell - przerwanie działania wszystkich terminali
+kill zadziała tylko dla tych procesów, dla których ma się uprawnienia
+
+Zadanie 3:
+po uruchomieniu komedy "cat" i wciśnięciu kombinacji klawiszy "Ctrl + C" proces wywołany przez "cat"
+zostaje przerwany
+
+Po utworzeniu pliku "wynik1.txt", użyciu polecenia  "cat" wpisaniu słowa "witaj"
+kombinacja:
+"Ctrl + C" zamyka proces rozpoczęty poleceniem "cat" a plik "wynik1.txt" pozstoje pusty
+"Ctrl + D" zamyka proces rozpoczęty poleceniem "cat" a do pliku "wynik1.txt" zostaje zapisane słowo witaj
+
+Zadanie 4:
+Ctrl+Z - przeniesienie procesu do działania w tle
+bg - przywrócenie procesu do "pełnego" działania
+fg - nadanie priorytetu zadaniu (dostępne komendy takie jak C^Z)
+nazwa_pliku & - odtworzenie procesu w tle
+jobs - podgląd procesów działających w tle

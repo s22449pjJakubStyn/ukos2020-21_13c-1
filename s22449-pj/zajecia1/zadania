@@ -1,0 +1,47 @@
+
+Treść: 1. Uruchom terminal.
+użycie skrótu klawiszowego: ctrl+alt+t
+wywołanie terminalu z menu: menu -> System Tools -> LXTerminal
+
+Treść: 2. Wyświetl zawartość aktualnego katalogu.
+Odp. ls
+
+Treść: 3. Sprawdź gzie aktualnie się znajdujesz. Porównaj to z tym co możesz zobaczyć w interfejsie graficznym.
+Odp: pwd
+
+Treść:  4.Przejdź do katalogu Pulpit za pomocą ścieżki względnej
+Odp. cd ../../../Desktop/
+
+Treść:  5.Sprawdź gdzie jesteś
+Odp. pwd
+Wynik. /home/ubuntu/Desktop
+
+Treść.  6.Wyświetl zawartość bieżącego katalogu
+Odp. ls
+Wynik: adding-packages-permanently-info.txt  passwords-info.txt
+
+Treść. 7.Zobacz, czy przechodząc do tego katalogu w sposób graficzny (wyklikać) otrzymasz to samo?
+Odp. Tak, po przejściu w sposób graficzny, otrzymuję to samo.
+
+Treść:  8.Wyświetl zawartość swojego katalogu domowego bez przechodzenia do niego (ls z odpowiednim parametrem)
+Odp. ls ~/
+
+Treść:  9.Przejdź do katalogu Obrzy w twoim katalogu domowym za pomocą ścieżki względnej
+Odp. cd ../Pictures/
+
+Treść: 10. Sprawdź gdzie jesteś
+Odp. pwd
+Wynik. /home/ubuntu/Pictures
+
+Treść:  11.Zobacz do jakiego katalogu przejdziesz za pomocą ścieżki ././././././
+Odp. Do tego, w którym aktualnie jestem
+
+Treść:  12.Przejdź do swojego katalogu domowego za pomocą ścieżki bezwzględnej
+Odp. cd /home/
+
+Treść:  13.Zobacz co się stanie jak wpiszesz komendę 'cd/root', jak już to zrobisz, zastanów się co się stało. Proponuję także zapytać prowadzącego
+Odp. po wpisaniu cd /root otrzymuję komunikat "Permission denied" dzieje się tak, ponieważ do katalogu root uprawnienia ma tylko uytkownik root. 
+Mogę do katalogu się dostać, ale z przedrostkiem "sudo"
+
+Treść:  14.Zobacz co się stanie jeśli wciśniesz kombinację klawiszy Ctrl+Alt+F1
+Odp. Pojawia się konsola

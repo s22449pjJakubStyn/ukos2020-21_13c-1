@@ -1,0 +1,33 @@
+Zadanie 1:
+ścieżka relatywna: cd ../../
+ścieżka bezwzględna: cd /tmp/ukos/ala/
+
+Zadanie 2:
+mkdir -p ./jan/kowalski
+
+Zadanie 3:
+mv /tmp/ukos/kot/ma/ale ./
+
+Zadanie 4:
+znaleźć jego PID w liście wygenerowanej komendą "ps" i zamknięcie go za pomocą komendy: kill <PID>
+
+Zadanie 5:
+ls -d al*
+
+Zadanie 6:
+chmod ala 777
+chmod ala 004
+chmod ala 700
+
+Zadanie 7:
+ls > lista_plikow.txt
+
+Zadanie 8:
+1. ktoś zmienił prawa dostępu do pliku
+2. ja zmieniłem sobie prawa dostępu do pliku
+
+Zadanie 9:
+klawisz TAB przyspiesza wpisywanie komend
+
+Zadanie 10:
+Na końcu polecenia znak & lub ctrl + z
