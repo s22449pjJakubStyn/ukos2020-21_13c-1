@@ -1,0 +1,116 @@
+1.Żeby uzyskać dostęp do skryptów nie podpisanych przez MIcrosoft jako administator użyłem komendy Set-ExecutionPolicy Bypass co umożliwiło mi korzystanie z nich
+
+2.Aby zobaczyć jaką składnie ma dowolne polecenie użyłem komendy Get-Help Get-ExecutionPolicy
+
+3.Żeby zobaczyć przykłady użycia dowolnej komendy użyłem Get-Help Get-ExecutionPolicy -Examples
+
+4.Aby dowiedzieć się jakie mam dostępne moduły użyłem komendy Get-Module -ListaAvailable, która zwróciła mi wszystkie dostępne w danej chwili moduły.
+
+5. Żeby zwróciło mi tylko te moduły równe lub większe wersji 2.0.0.0 użyłem komendy Get-Module -ListAvailable | ? {$_.Version -ge "2.0.0.0"}.
+
+6.Aby wyświetliło mi wszystkie polecenia (cmdlet) w powyższych modułach ^ użyłem komendy Get-Module -LIstAVailable | ? {$_.Version -ge "2.0.0.0"} | % {Get-Command -Module $_.Name}.
+
+7.Żeby wyświetlić wszystkie procesy które mają w nazwie "Add-" lub "Get-" w powyższych modułach użyłem komendy Get-Module -ListAvailable | ? {$_.Version -ge "2.0.0.0"} | % {Get-Command -Module $_.Name} | ? {($_.Name -like "Add-*") -or ($_.Name -like "Get-*")}.
+
+8.Aby wyświetlić powyższe procesy ^ w postaci tabelki graficznej otworzonej w nowym okienku użyłem komendy Get-Module -ListAvailable | ? {$_.Version -ge "2.0.0.0"} | % {Get-Command -Module $_.Name} | ? {($_.Name -like "Add-*") -or ($_.Name -like "Get-*")} | Out-GridView
+albo do pliku $nazwaPliku = "mojaNazwaPliku.txt" wtedy komenda wyglądała tak: Get-Module -ListAvailable | ? {$_.Version -ge "2.0.0.0"} | % {Get-Command -Module $_.Name} | ? {($_.Name -like "Add-*") -or ($_.Name -like "Get-*")} | Out-File $env:TEMP\$nazwaPliku 
+albo można równiez z tym nic nie robić (w takiej sytuacji by się przetworzyło ale nie wypisywało) i wtedy komenda wyglądała tak: Get-Module -ListAvailable | ? {$_.Version -ge "2.0.0.0"} | % {Get-Command -Module $_.Name} | ? {($_.Name -like "Add-*") -or ($_.Name -like "Get-*")} | Out-Null
+
+9.Aby załadować moduł używamy Import-Module NazwaModułu więc żeby załadować moduł BItsTransfer użyłem kodu Import-Module BitsTransfer (można użyć aliasu na ową komendę wtedy komendawygląda tak ipmo BitsTransfer).
+
+10.Aby wylistować wszystkie komendy w tym module użyłem komendy Get-Command -Module BitsTransfer
+
+11.Użyłem tego procesu do pobrania dużego pliku w tym przykładzie obrazu maszyny wirtualnej do javy wykonałem wszystkie instrukcje i użyłem komendy $cred = Get-Credential
+
+12.Następnie zacząłem przesyłać plik komendą Start-BitsTransfer -Source http://szuflandia.pjwstk.edu.pl/pub/repo/java/lubuntu_13_04_v02.zip -Destination D:\ -Credential $cred -Authentication Negotiate
+
+13.Żeby zrobić to w sposób asynchroniczny (czyli nie blokujący konsoli) to trzeba użyć komendy $job = Start-BitsTransfer -Source http://szuflandia.pjwstk.edu.pl/pub/repo/java/lubuntu_13_04_v02.zip -Destination D:\ -Credential $cred -Authentication Negotiate -Asynchronous -DisplayName "Moj Bits Transfer"
+
+14.Aby zobaczyć jaki jest stan transferu użyłem komendy Get-BitsTransfer.
+
+15.Jeżeli w kolumnie JobState będzie Transferred to aby ukończyć całość i dostać pobierany plik trzeba jeszcze zakończyć job transferu a robi się to za pomocą komendy Complete-BitsTransfer -BitsJob $job.
+
+16,Aby zmierzyć czas wykonania polecenia używa się komendy Measure-Command (np. Measure-Command {Get-ChildItem -Path C:\Windows} )
+
+17.Można użyć aliasu na komendę listowania zawartości katalogu Get-Alias | ? {$_.Definition -like "Get-ChildItem"}
+
+18.Żeby wylistować wszystkie pliki i katalogi z katalogu głównego ale z odstępem czasowym użyłem komendy s C:\ | %{Sleep -Milliseconds 250; return $_} | Format-Table
+
+19.Aby urochomić program należy użyć operatora "call", który mas postać znaku "&" (np. & C:\Windows\notepad.exe)
+
+20.Są 2 sposoby żeby wylistować zainstalowane aplikacje/programy:
+ 1. W rejestrze poszukać
+ 2. Odpytać WMI (Windows Management Instrumentation)
+
+20. 1. Jeżeli chcemy skorzystać z rejestru to trzeba dostać sie do miejsca gdzie są przechowywane informacje o zainstalowanych aplikacjach (HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall)
+ PS potrafi "wejść" do rejestru jak na dysk. Żeby zobaczyć jakie dyski są dostępne w PS użyłem komendy Get-PSDrive. A żeby wejść do rejestru można zrobić tak: cd hklm:\    i przeglądać sobie rejestr jak zwykły system plików 
+albo  cd .\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall  wylistować sobie jego zawartość przez ls ale to spowoduje wyświetlenie sporej ilości tekstu w brzydkiej postaci. 
+Można to trochę zmienić:  cd HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall  potem ls | %{ potem Get-ItemProperty $_.pspath | Select-Object DisplayName, InstallDate, UninstallString i na koniec } | Format-Table -AutoSize
+Zamiast listować na ekran, można odinstalować korzystając z operatora wołania "&" tak jak wyżej z notatnikiem tylko tutaj to wyglądało tak: cd HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall potem ls | %{  potem Get-ItemProperty $_.pspath | Select-Object DisplayName, InstallDate, UninstallString i na koniec } | %{& $_.UninstallString}
+
+20. 2. WMI- służy do zarządzania systemem i można z niego wiele ciekawych rzeczy wyciągnąć. Użyłem komendy Get-WmiObject -Class Win32_Product | Format-Table -AutoSize
+Pojawiły się z przodu numery które są brzydkie, bardzo podobne i zajmują dużo miejsca a nie wnoszą nic ciekawego. Więc je wyelimnowałem komendą Get-WmiObject -Class Win32_Product | Select-Object Name, Vendor | Format-Table -AutoSize
+ A żeby znaleźć wszystkie pakiety od Microsoftu użyłem komendy Get-WmiObject -Class Win32_Product | ?{$_.Vendor.toLower() -like "microsoft"} | Select-Object Name, Vendor | Format-Table -AutoSize
+
+21.Żeby odinstalować zainstalowane aplikacje należy użyc szeregu komend:
+Get-WmiObject -Class Win32_Product | ?{$_.Vendor.toLower() -like "microsoft"} | %{
+	$wmiProduct = $_
+	$answer = Read-Host "Uninstall '$($wmiProduct.Name)' [y/n]"
+	$answer = $answer.ToLower()
+	switch($answer) {
+        "y" {
+           Write-Host -NoNewline -ForegroundColor Red "Removing: "
+           Write-Host -ForegroundColor White "$($wmiProduct.Name)"
+           # odkomentowanie poniższej lini spowoduje błąd braku uprawnień dla Twojego konta
+            #$wmiProduct.Uninstall() # ta linia uruchamia deinstalację. Odkomentuj jeśli chcesz odinstalować wszystkie pakiety od Microsoftu. (nie polecam)
+      }
+    "n" {Write-Host "Ok. Skipping."}
+       default {Write-Host -ForegroundColor Red "Unexpected value. Skipping uninstalling it."}
+   }
+}
+
+22.Żeby korzystać z notyfikacji musiałem załadować odpowiednią bibliotekę za pomocą szeregu komend:
+[void] [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
+
+$icoPath = Get-Process -id $pid | Select-Object -ExpandProperty Path
+
+$myNotification = New-Object System.Windows.Forms.NotifyIcon
+$myNotification.Icon = [System.Drawing.Icon]::ExtractAssociatedIcon($icoPath)
+$myNotification.BalloonTipIcon = 'Error'
+$myNotification.BalloonTipText = "Your cat has meowed!" 
+$myNotification.BalloonTipTitle = "Cat Error"
+$myNotification.Visible = $True 
+$myNotification.ShowBalloonTip(10000)
+
+23.Aby zrobić własną funkcję użyłem szeregu komend:
+function GiveMePopup {
+    param(
+        [Parameter(Mandatory=$true)]
+        $Text,
+   
+        [Parameter(Mandatory=$true)]
+        $Title,
+   
+        [ValidateSet('None', 'Info', 'Warning', 'Error')]
+        $Icon = 'Info',
+
+        $Timeout = 10000
+    )
+    [void] [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
+    $icoPath = Get-Process -id $pid | Select-Object -ExpandProperty Path
+    $myNotification = New-Object System.Windows.Forms.NotifyIcon
+    $myNotification.Icon = [System.Drawing.Icon]::ExtractAssociatedIcon($icoPath)
+    $myNotification.BalloonTipIcon = $Icon
+    $myNotification.BalloonTipText = $Text 
+    $myNotification.BalloonTipTitle = $Title
+    $myNotification.Visible = $True 
+    $myNotification.ShowBalloonTip(1000)
+}
+
+24.Aby ją wywołać użyłem komendy GiveMePopup -Text "Your cat has meowed!" -Title "Cat Error" -Icon Error
+a żeby wykonało się to wielokrotnie zastosowałem: 
+For ($i=1; $i-le 10; $i++) {
+	GiveMePopup -Text "WTF- second passed!" -Title "WTF Notification" -Icon Info
+}
+
+a żeby pokazać wiele wierszy (ale max 4) użyłem komendy GiveMePopup -Text "Pierwszy wiersz`nDrugi wiersz`nTrzeci wiersz`nCzwarty wiersz" -Title "Długa informacja" -Icon Info

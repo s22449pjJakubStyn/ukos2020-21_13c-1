@@ -94,3 +94,46 @@ Na dzisiejszych zajęciach:
 _________________________________________________________
 _________________________________________________________
 
+Zajęcia6
+Temat:PowerShell
+
+Na dzisiejszych zajęciach przyswjaliśmy teorytyczną wiedzę z PowerShella
+
+_________________________________________________________
+_________________________________________________________
+
+Zajęcia7
+Temat:PowerShell
+
+Na dzisiejszcyh zajęciach zaczęliśmy rozwiązywać zadania z PowerShella
+
+_________________________________________________________
+_________________________________________________________
+
+Zajęcia8
+Temat:PowerShell
+
+Na dzisiejszych zajęciach nauczyłem się: 
+1.Jak uzyskać dostęp do skryptów nie podpisanych przez MIcrosoft
+2.Jak zobaczyć jaką składnie ma dowolne polecenie
+3.Jak zobaczyć przykłady użycia dowolnej komendy
+4.Jak konstruować komendy w PS (jaką mają stałą konwencję nazewniczą)
+5.Jak dowiedzieć się jakie mam dostępne moduły
+6.Jak zrobić, żeby zwróciło mi tylko te moduły równe lub większe wersji 2.0.0.0 
+7.Jak wyświetlać  wszystkie polecenia (cmdlet) w powyższych modułach ^
+8.Jak wyświetlać wszystkie procesy które mają w nazwie "Add-" lub "Get-" w powyższych modułach
+9.Jak wyświetlić powyższe procesy ^ w postaci tabelki graficznej otworzonej w nowym okienku albo do pliku
+10.Jak załadować moduł 
+11.Jak wylistować wszystkie komendy w tym module 
+12.Jak pobieraći przesyłać duży plik i jak robić to w sposób asynchroniczny.
+13.Jak zobaczyć jaki jest stan transferu
+14.Co zrobić gdy w kolumnie JobState będzie Transfered (czyli jak ukończyć całość i dostać pobierany plik)
+15.Jak zmierzyć czas wykonania polecenia
+16.Że można używać aliasów na poszczególne polecenia.
+17.Jak wylistować wszystkie pliki i katalogi z katalogu głównego ale z odstępem czasowym
+18.Jak urochomić dowolny program
+19.Jak wylistować zainstalowane aplikacje/programy na 2 sposoby.
+20.Jak odinstalować zainstalowane aplikacje.
+21.Jak korzystać z notyfikacji.
+22.Jak zrobić własną funkcję.
+23.Jak wywołać moją własną komendę (raz, parę razy i żeby pokazało więcej wierszy).
